@@ -6,7 +6,7 @@ class IdeasController < ApplicationController
   def create
     @idea = Idea.new(idea_params)
     if @idea.save
-      redirect_to root_path
+      redirect_to word_ideas_path
     else
       render :new
     end
