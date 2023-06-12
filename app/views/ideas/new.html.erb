@@ -1,2 +1,7 @@
 <h1>Ideas#new</h1>
 <p>Find me in app/views/ideas/new.html.erb</p>
+
+<%= form_with model: @idea, local: true do |f|  %>
+  <%= f.text_field :title, class:'form-control' %>
+  <%= f.submit '決定！', class: 'btn btn-primary' %>
+<% end %>
