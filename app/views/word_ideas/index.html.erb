@@ -1,2 +1,18 @@
 <h1>WordIdeas#index</h1>
 <p>Find me in app/views/word_ideas/index.html.erb</p>
+
+<p>前の画面でユーザーが入力したideaのtitleを表示</p>
+<h1><%= @idea.title %></h1>
+
+<div>データベースからランダムで取得したwordの一つを表示している</div>
+<h1><%= @word.title %></h1>
+
+<p>まるボタンとばつボタンを表示する</p>
+<%= link_to "まる", word_ideas_path, data: { "turbo-method": :post } %>
+<%= link_to "ばつ", word_ideas_path %>
+
+<div>ここから下に、word_ideasの一覧を表示するよ</div>
+<div>具体的には、@word_ideasの中身から紐づいたideaとwordのtitleを表示する</div>
+<% @word_ideas.each do |w| %>
+  <h1><%= w.idea.title %> ✖️ <%= w.word.title %></h1>
+<% end %>

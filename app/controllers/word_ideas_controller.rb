@@ -7,6 +7,7 @@ class WordIdeasController < ApplicationController
     session[:random_word] = Word.sample.id
     # Wordモデルからランダムなレコードidを取得し、@wordに格納する
     @word = Word.find(session[:random_word])
+    @idea = Idea.last
   end
 
   def create
